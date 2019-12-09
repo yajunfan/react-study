@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom'
-import Servers from './servers'
+// import Servers from './servers'
+import TodoLists from './reduxStudy/TodoLists'
 
 
-ReactDom.render(<Servers/>,document.getElementById("root"));
+ReactDom.render(<TodoLists/>,document.getElementById("root"));
