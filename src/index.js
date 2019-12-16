@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom'
-// import Servers from './servers'
-import TodoLists from './reduxStudy/TodoLists'
+import AppRouter from './reactRouter/AppRouter'
 
 
-ReactDom.render(<TodoLists/>,document.getElementById("root"));
+ReactDom.render(<AppRouter/>,document.getElementById("root"));
