@@ -3,9 +3,8 @@ import React, { Component } from 'react';
 import '../../src/App.css'
 // import {Input,Button,List} from 'antd';
 import store from '../store/index'
-import {changeInputAction,addItemAction,deleteItemAction,getPlanListAction} from '../store/actionCreators'
+import {changeInputAction,addItemAction,deleteItemAction,getPlanList} from '../store/actionCreators'
 import TodoListUi from './TodoListsUi'
-import axios from 'axios'
 
 // 实现了store ，page ， action的分离 更好管理
 class Todolists extends Component {
@@ -96,13 +95,16 @@ class Todolists extends Component {
     }
     deleteItem(index){
         const action=deleteItemAction(index);
+        console.log(action)
         store.dispatch(action);
     }
     componentDidMount(){
-        axios.get('http://yapi.demo.qunar.com/mock/53736/getlists').then((res)=>{
-            const action =getPlanListAction(res);
-            store.dispatch(action);
-        }) 
+        const action =getPlanList();
+        console.log(action)
+        store.dispatch(action);
+        // axios.get('http://yapi.demo.qunar.com/mock/53736/getlists').then((res)=>{
+           
+        // }) 
     }
 }
 
